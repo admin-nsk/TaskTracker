@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}
+Вход в систему
+{% endblock %}
+
+{% block content %}
+    <div class="text-center col-5">
+    <div class="form-signin">
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <h1 class="h3 mb-3 fw-normal">Войти в систему</h1>
+        <p class="form-floating">
+            {{ form.login.label }}<br>
+            {{ form.login(size=32, class="form-control") }}
+        </p>
+        <p class="form-floating">
+            {{ form.password.label }}<br>
+            {{ form.password(size=32, class="form-control") }}
+        </p>
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>{{ form.submit(class="w-100 btn btn-lg btn-primary") }}</p>
+    </form>
+    </div>
+    </div>
+{#<div class="text-center col-5">#}
+{#<div class="form-signin">#}
+{#  <form method="post" name="LoginForm">#}
+{#    <h1 class="h3 mb-3 fw-normal">Войти в систему</h1>#}
+{#    {{ form.hidden_tag() }}#}
+{#    <div class="form-floating">#}
+{#      <input type="text" class="form-control" id="floatingInput" name="login">#}
+{#        {{ form.login(size=32) }}#}
+{#      <label for="floatingInput">{{ form.login.label }}</label>#}
+{#    </div>#}
+{#    <div class="form-floating">#}
+{#      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">#}
+{#        {{ form.password(size=32) }}#}
+{#      <label for="floatingPassword">{{ form.password.label }}</label>#}
+{#    </div>#}
+{#    <button class="w-100 btn btn-lg btn-primary" type="submit">{{ form.submit.label }}</button>#}
+{#    <p class="mt-5 mb-3 text-muted">©2021</p>#}
+{#  </form>#}
+{#</div>#}
+{#</div>#}
+{% endblock %}

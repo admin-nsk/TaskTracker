@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Задача
+{% endblock %}
+
+{% block content %}
+    <div class="card w-75">
+          <div class="card-body">
+            <p class="card-text">{{ data.task.description }}</p>
+          <div class="btn-group">
+                  <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ data.task.current_status }}
+                  </button>
+                <ul class="dropdown-menu">
+                  {%  for status in statuses %}
+                  <li>
+                      <form method="POST" action="{{ url_for('task', task_id = data.task.id, status = status) }}"
+                            name="taskform">
+                      <button class="dropdown-item" type="submit" >{{ status }}</button>
+                      </form>
+                  </li>
+                  {% endfor %}
+                 </ul>
+          </div>
+          </div>
+        </div>
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Пользователь</th>
+      <th scope="col">Статус</th>
+      <th scope="col">Дата</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for cycle in data.lifecycle %}
+    <tr>
+      <th scope="row">1</th>
+      <td>{{ cycle.user }}</td>
+      <td>{{ cycle.status }}</td>
+      <td>{{ cycle.date }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+
+
+
+

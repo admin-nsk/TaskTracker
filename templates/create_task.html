@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Создать задачу
+{% endblock %}
+
+{% block content %}
+<form action="" method="post" novalidate>
+{#        {{ form.hidden_tag() }}#}
+        <h1 class="h3 mb-3 fw-normal">Создать задачу</h1>
+        <div class="input-group">
+          <span class="input-group-text">Описание</span>
+          <textarea class="form-control" aria-label="Decription" name="description"></textarea>
+        </div>
+        <p><button type="submit" class="btn btn-primary">Создать</button></p>
+    </form>
+{% endblock %}
+
+
+
+
