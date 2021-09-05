@@ -19,10 +19,7 @@ task = Table('tasks', metadata_obj,
     Column('user_id', None, ForeignKey('users.id')),
     Column('description', String, nullable=False),
     Column('current_status', String, nullable=False, default='Новая'),
-    Column('date_creation', String, nullable=False, default=datetime.now),
-    Column('date_get_to_work', String),
-    Column('date_complete', String),
-    Column('date_cancel', String)
+    Column('date_set_status', String, nullable=False, default=datetime.now),
   )
 
 lifecycle_tasks = Table('lifecycle_tasks', metadata_obj,
